@@ -29,10 +29,16 @@ class App:
         self.operation1_menu = tk.Menu(self.main_menu, tearoff=0)
         self.operation1_menu.add_command(label='人臉辨識', command=self.my_function.face_recognition)
         self.operation1_menu.add_command(label='圖像合併', command=self.my_function.concatenate)
+        self.operation1_menu.add_command(label='影像疊合', command=self.my_function.blending)
+
+        #Add operationa2 submenu
+        self.operation2_menu = tk.Menu(self.main_menu, tearoff=0)
+        self.operation2_menu.add_command(label='繪製多邊形', command=self.my_function.drawing)
 
         # Add  submenu to mainmenu
         self.main_menu.add_cascade(label="檔案", menu=self.file_menu)
         self.main_menu.add_cascade(label='功能1', menu=self.operation1_menu)
+        self.main_menu.add_cascade(label='功能2', menu=self.operation2_menu)
 
         # display menu
         self.window.config(menu=self.main_menu)
